@@ -1,7 +1,7 @@
 total = 0
 assess = ""
-GPA = []  # 建议使用空列表，稍后 append，或者保持原样但确保索引正确
-# 既然原代码用了固定索引 [0],[1],[2]，我们保持原结构，但修复逻辑
+GPA = []  # Suggest using empty list, append later, or keep original structure but ensure correct indexing
+# Since original code used fixed indices [0],[1],[2], we keep original structure but fix logic
 
 def askforscore(assess_name):
     try:
@@ -14,7 +14,7 @@ def askforscore(assess_name):
         return askforscore(assess_name)
 
 def calculate_bio_score():
-    # globalling all the grades scores. 
+    # Global all the grades scores. 
     global total
     global bfl_score
     global ongoing
@@ -34,7 +34,7 @@ def calculate_bio_score():
     total = total + ongoing * 0.3
     
     # 3. Ask for the score of the three assessments results
-    # 我们将分数存入列表
+    # We store scores in a list
     test_scores = []
     test_scores_before_drop = []
     
@@ -51,16 +51,16 @@ def calculate_bio_score():
     test_scores_before_drop.append(askforscore(assess))
     
     # 4. Drop the test with the lowest score
-    # 修复点：不需要循环，直接找到最小值并移除
+    # Fix point: no need for loop, directly find minimum value and remove it
     if len(test_scores) > 0:
         lowest = min(test_scores)
         test_scores.remove(lowest)
         print(f"Dropped lowest test score: {lowest}")
     
-    # 计算剩余两个测试的总分 (每个占10%，共20%)
-    # 此时 test_scores 列表中应该只剩下两个分数
+    # Calculate total score of remaining two tests (10% each, total 20%)
+    # At this point, test_scores list should contain only two scores
     remaining_tests_total = sum(test_scores) * 0.1 
-    # 注意：原逻辑是 GPA[0]*0.1 + GPA[1]*0.1，等同于 sum(remaining) * 0.1
+    # Note: original logic is GPA[0]*0.1 + GPA[1]*0.1, equivalent to sum(remaining) * 0.1
     total = total + remaining_tests_total
     
     # 5. Ask for the score of EOY (40%)
