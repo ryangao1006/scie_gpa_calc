@@ -14,13 +14,14 @@ subject_grades = {
 
 # biology detailes for grades, including percentage
 biology_grades = {
-    "BFL": 0.1,
-    "ongoing grade": 0.3,
-    "Test1 topic7": 0.1,
-    "Test2 topic9,10": 0.1,
-    "Test3 topic11,12,13": 0.1,
-    "EOY": 0.4
+    "BFL": [bio.bfl_score, 0.1],
+    "ongoing grade": [bio.ongoing, 0.3],
+    "Test1 topic7": [bio.test_scores_before_drop[0], 0.1],
+    "Test2 topic9,10": [bio.test_scores_before_drop[1], 0.1],
+    "Test3 topic11,12,13": [bio.test_scores_before_drop[2], 0.1],
+    "EOY": [bio.EOY, 0.4]
 }
+
 
 def get_best(subject_grades): # return the collection of best subject and grade as collection
     highest_subject_score = max(subject_grades.items(), key=lambda x: x[1])
