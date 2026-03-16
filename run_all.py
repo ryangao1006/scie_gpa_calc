@@ -7,13 +7,13 @@ import sys
 import os
 
 # Add the current directory to the path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))) # using ai's help
 
 # Import the calculation functions
-import bio
-import econ
-import geo
-import maths
+import bio # biology calculator
+import econ # economics calculator
+import geo # geography calculator
+import maths # mathematics calculator
 
 print("="*60)
 print("Running all subject grade calculators")
@@ -41,6 +41,6 @@ print("Generating final report")
 print("="*60)
 
 # Import and run the report
-import report
+import report # report generator, including the final suggestions and advices
 
 print("\nReport generated successfully!")
