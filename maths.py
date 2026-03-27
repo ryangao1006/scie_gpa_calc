@@ -57,8 +57,8 @@ def calculate_maths_score():
     
     # 4. Input EOY Exam (End of Year) score (40%)
     print("\n[Part 4] End of Year (EOY) Exam (40%)")
-    eoy_score = get_score("Enter EOY Exam score (percentage): ")
-    total_score += eoy_score * 0.4
+    eoy = get_score("Enter EOY Exam score (percentage): ")
+    total_score += eoy * 0.4
     
     # ==========================================
     # Output final result
