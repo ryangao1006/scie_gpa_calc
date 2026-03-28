@@ -14,7 +14,7 @@ subject_grades = {
 
 # biology detailes for grades, including percentage
 biology_grades = {
-    "BFL": [bio.bfl_score, 0.1],
+    "BFL": [bio.bfl, 0.1],
     "ongoing grade": [bio.ongoing, 0.3],
     "Test1 topic7": [bio.test_scores_before_drop[0], 0.1],
     "Test2 topic9,10": [bio.test_scores_before_drop[1], 0.1],

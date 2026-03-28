@@ -16,7 +16,7 @@ def askforscore(assess_name):
 def calculate_bio_score():
     # Global all the grades scores. 
     global total
-    global bfl_score
+    global bfl
     global ongoing
     global test_scores_before_drop
     global EOY
@@ -25,8 +25,8 @@ def calculate_bio_score():
     
     # 1. Ask for the score of BFL (10%)
     assess = "BFL"
-    BFL = askforscore(assess)
-    total = total + BFL * 0.1
+    bfl = askforscore(assess)
+    total = total + bfl * 0.1
     
     # 2. Ask for the score of ongoing grade (30%)
     assess = "ongoing grade"
@@ -39,16 +39,19 @@ def calculate_bio_score():
     test_scores_before_drop = []
     
     assess = "Test1 topic7"
-    test_scores.append(askforscore(assess))
-    test_scores_before_drop.append(askforscore(assess))
-    
+    s = askforscore(assess)
+    test_scores.append(s)
+    test_scores_before_drop.append(s)
+
     assess = "Test2 topic9,10"
-    test_scores.append(askforscore(assess))
-    test_scores_before_drop.append(askforscore(assess))
-    
+    s = askforscore(assess)
+    test_scores.append(s)
+    test_scores_before_drop.append(s)
+
     assess = "Test3 topic11,12,13"
-    test_scores.append(askforscore(assess))
-    test_scores_before_drop.append(askforscore(assess))
+    s = askforscore(assess)
+    test_scores.append(s)
+    test_scores_before_drop.append(s)
     
     # 4. Drop the test with the lowest score
     # Fix point: no need for loop, directly find minimum value and remove it
